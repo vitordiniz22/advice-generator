@@ -63,8 +63,8 @@ button {
    letter-spacing: -0.017rem;
    color: var(--color-light-cyan);
    margin: 0;
-   padding-bottom: 3.2rem;
-   margin-bottom: 2.45rem;
+   padding-bottom: 3rem;
+   margin-bottom: 2.55rem;
 }
 
 .card__quote:before {
