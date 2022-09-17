@@ -28,11 +28,10 @@ function requestAdviceSuccess (json) {
    adviceEl.textContent = json.slip.advice;
    codeEl.textContent = json.slip.id;
    updateBtn.disabled = false;
-   console.log(json);
 }
 
 function requestAdviceError (err) {
-   console.log(err);
+   console.error(err);
    updateBtn.disabled = false;
 }
 
