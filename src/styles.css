@@ -24,10 +24,8 @@ body {
 
 main {
    display: flex;
-   align-items: center;
    justify-content: center;
-   min-height: 100vh;
-   padding: 0.833rem;
+   padding: 15px;
 }
 
 /* Card */
@@ -37,9 +35,10 @@ main {
    width: 100%;
    max-width: 33.75rem;
    background-color: var(--color-dark-greyish-blue);
-   border-radius: 1rem;
+   border-radius: 15px;
    text-align: center;
-   padding: 3rem;
+   padding: 48px;
+   margin-top: 200px;
 }
 
 .card__heading {
