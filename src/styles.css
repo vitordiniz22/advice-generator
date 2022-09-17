@@ -6,7 +6,6 @@
    --color-light-cyan: #CEE3E9;
    --color-grayish-blue: #4F5D74;
    --color-dark-greyish-blue: #313A48;
-   --card-button-size: 3.556rem;
 }
 
 * {
@@ -28,17 +27,25 @@ main {
    padding: 15px;
 }
 
+div, section, main {
+   position: relative;
+}
+
+button {
+   border: 0;
+   cursor: pointer;
+}
+
 /* Card */
 
 .card {
-   position: relative;
    width: 100%;
    max-width: 33.75rem;
    background-color: var(--color-dark-greyish-blue);
    border-radius: 15px;
    text-align: center;
-   padding: 48px;
-   margin-top: 200px;
+   padding: 42px 48px;
+   margin-top: 205px;
 }
 
 .card__heading {
@@ -47,7 +54,7 @@ main {
    text-transform: uppercase;
    letter-spacing: 0.227rem;
    color: var(--color-neon-green);
-   margin-bottom: 1.5rem;
+   margin-bottom: 1.6rem;
 }
 
 .card__quote {
@@ -94,9 +101,7 @@ main {
    width: 64px;
    height: 64px;
    border-radius: 100%;
-   border: none;
    background-color: var(--color-neon-green);
-   cursor: pointer;
    transition: .3s ease box-shadow;
 }
 
