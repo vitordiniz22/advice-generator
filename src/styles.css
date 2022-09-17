@@ -44,8 +44,8 @@ button {
    background-color: var(--color-dark-greyish-blue);
    border-radius: 15px;
    text-align: center;
-   padding: 42px 48px;
-   margin-top: 212px;
+   padding: 40px 48px;
+   margin-top: 216px;
 }
 
 .card__heading {
@@ -64,7 +64,7 @@ button {
    color: var(--color-light-cyan);
    margin: 0;
    padding-bottom: 3rem;
-   margin-bottom: 1.5rem;
+   margin-bottom: 1.7rem;
 }
 
 .card__quote:before {
