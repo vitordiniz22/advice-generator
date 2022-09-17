@@ -60,7 +60,7 @@ button {
 .card__quote {
    position: relative;
    font-size: 1.75rem;
-   letter-spacing: -0.017rem;
+   letter-spacing: -0.015rem;
    color: var(--color-light-cyan);
    margin: 0;
    padding-bottom: 3rem;
