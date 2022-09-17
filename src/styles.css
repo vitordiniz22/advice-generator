@@ -52,7 +52,7 @@ button {
    display: block;
    font-size: 0.8125rem;
    text-transform: uppercase;
-   letter-spacing: 0.227rem;
+   letter-spacing: 0.247rem;
    color: var(--color-neon-green);
    margin-bottom: 1.6rem;
 }
@@ -63,7 +63,7 @@ button {
    letter-spacing: -0.017rem;
    color: var(--color-light-cyan);
    margin: 0;
-   padding-bottom: 3.1rem;
+   padding-bottom: 3.2rem;
    margin-bottom: 2.45rem;
 }
 
