@@ -12,8 +12,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/advice-generator-app-2Bz1MaIKqE)
-- Live Site URL: [Add live site URL here](https://vitordiniz22.github.io/advice-generator/)
+- [Solution URL](https://www.frontendmentor.io/solutions/advice-generator-app-2Bz1MaIKqE)
+- [Live Site URL](https://vitordiniz22.github.io/advice-generator/)
 
 ## Built with
 
