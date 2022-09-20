@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import './style.css';
 
 // Interfaces
@@ -11,7 +12,8 @@ interface Advice {
 
 // Constants
 
-const API_URL = 'https://api.adviceslip.com/advice';
+const API_URL = 'https://api.adviceslip.com/advice' as string;
+const API_DELAY = 2000 as number;
 
 // Dom
 
@@ -21,6 +23,7 @@ const updateBtn = document.querySelector(
 const adviceEl = document.querySelector(
   '[data-advice]'
 ) as HTMLSpanElement | null;
+const quoteEl = document.querySelector('[data-quote]') as HTMLDivElement | null;
 const codeEl = document.querySelector('[data-code]') as HTMLSpanElement | null;
 
 // Functions
@@ -31,7 +34,7 @@ function handleUpdate(e: MouseEvent): void {
 }
 
 function requestAdvice(): void {
-  disableUpdateButton();
+  if (updateBtn != null) updateBtn.disabled = true;
 
   fetch(API_URL)
     .then((res: Response) => res.json())
@@ -40,8 +43,15 @@ function requestAdvice(): void {
 }
 
 function requestAdviceSuccess(json: Advice): void {
-  if (adviceEl != null) adviceEl.textContent = json.slip.advice;
-  if (codeEl != null) codeEl.textContent = json.slip.id.toString();
+  gsap.to(quoteEl, {
+    duration: 0.3,
+    autoAlpha: 0,
+    onComplete: (): void => {
+      gsap.to(quoteEl, { duration: 0.3, autoAlpha: 1, delay: 0.1 });
+      if (adviceEl != null) adviceEl.textContent = json.slip.advice;
+      if (codeEl != null) codeEl.textContent = json.slip.id.toString();
+    },
+  });
   enableUpdateButton();
 }
 
@@ -50,14 +60,10 @@ function requestAdviceError(err: any): void {
   enableUpdateButton();
 }
 
-function disableUpdateButton(): void {
-  if (updateBtn != null) updateBtn.disabled = true;
-}
-
 function enableUpdateButton(): void {
   setTimeout((): void => {
     if (updateBtn != null) updateBtn.disabled = false;
-  }, 2000);
+  }, API_DELAY);
 }
 
 // Listeners
