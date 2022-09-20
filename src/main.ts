@@ -31,10 +31,10 @@ function handleUpdate(e: MouseEvent): void {
 }
 
 function requestAdvice(): void {
-  if (updateBtn != null) updateBtn.disabled = true;
+  disableUpdateButton();
 
   fetch(API_URL)
-    .then((res) => res.json())
+    .then((res: Response) => res.json())
     .then(requestAdviceSuccess)
     .catch(requestAdviceError);
 }
@@ -42,12 +42,22 @@ function requestAdvice(): void {
 function requestAdviceSuccess(json: Advice): void {
   if (adviceEl != null) adviceEl.textContent = json.slip.advice;
   if (codeEl != null) codeEl.textContent = json.slip.id.toString();
-  if (updateBtn != null) updateBtn.disabled = false;
+  enableUpdateButton();
 }
 
 function requestAdviceError(err: any): void {
   console.error(err);
-  if (updateBtn != null) updateBtn.disabled = false;
+  enableUpdateButton();
+}
+
+function disableUpdateButton(): void {
+  if (updateBtn != null) updateBtn.disabled = true;
+}
+
+function enableUpdateButton(): void {
+  setTimeout((): void => {
+    if (updateBtn != null) updateBtn.disabled = false;
+  }, 2000);
 }
 
 // Listeners
